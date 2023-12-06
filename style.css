@@ -21,6 +21,21 @@ body{
     }
   }
 
+  /* @keyframes incredible {
+    0% { background-image: url("./assets/images/wypierdalaj2.png");}
+    50% { background-image: url("./assets/images/mrincredible.png");}
+    100%{ background-image: url("./assets/images/wypierdalaj2.png");}
+  }
+
+  .obraz{
+    height: 300px;
+    width: 200px;
+    animation-name: incredible;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  } */
+
 p{
     font-size: 21px;
     font-weight: bold;
@@ -33,6 +48,6 @@ p{
     font-weight: normal;
 }
 
-.myCarusel{
-  background-color: #96EFFF;
+#myCarousel{
+  background-color: #5FBDFF;
 }
