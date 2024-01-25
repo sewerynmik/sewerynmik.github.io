@@ -43,12 +43,15 @@
         <form method="post">
             <input type="text" name="search" id="search" placeholder="Wpisz szukaną frazę">
             <input type="submit" value="Szukaj">
+            <div id="videosContainer">
+            </div>
         </form>
     </div>
 
     <hr>
 
     <div class="text">
+        <img src="zdjecia/zdj1.png" alt="człowiek" id="zdj1">
         <p>
             YouTube jest fenomenem cyfrowym, który zrewolucjonizował sposób, w jaki ludzie na całym świecie konsumują treści wideo. Jako platforma do udostępniania filmów, YouTube pozwala użytkownikom na przesyłanie, oglądanie, komentowanie i udostępnianie różnorodnych treści wideo. Od swojego uruchomienia w 2005 roku, YouTube szybko stał się jedną z najbardziej wpływowych i odwiedzanych stron internetowych na świecie.
         </p>
@@ -59,6 +62,7 @@
         <p>
             Jedną z najważniejszych cech YouTube jest jego demokratyczna natura. Każdy, kto ma dostęp do internetu, może tworzyć treści. Dzięki temu YouTube stał się platformą, która umożliwia wyrażanie się i dzielenie się talentami bez potrzeby posiadania dużych zasobów finansowych czy połączeń w tradycyjnych mediach. To otwiera drzwi dla niezliczonych twórców z różnych środowisk i kultur, co z kolei wzbogaca i różnicuje treści dostępne na platformie.
         </p>
+        <img src="zdjecia/zdj2.png" alt="człowiek" id="zdj2">
         <p>
             YouTube również zmienił sposób, w jaki ludzie zarabiają na tworzeniu treści. Dzięki systemowi partnerstwa, twórcy mogą generować dochody poprzez reklamy wyświetlane w ich filmach. Dla wielu osób YouTube stał się pełnoetatową karierą i źródłem dochodu.
         </p>
@@ -68,6 +72,7 @@
         <p>
             W ciągu ostatnich lat, YouTube wprowadził również wiele nowych funkcji, takich jak transmisje na żywo, YouTube Premium oraz dedykowane aplikacje dla dzieci. Te innowacje pozwalają na jeszcze lepsze dostosowanie do potrzeb izachowań użytkowników.
         </p>
+        
     </div>
 
     <hr>
@@ -102,7 +107,7 @@
     <hr>
 
     <div class="formularz">
-        <form action="" method="post">
+        <form action="" method="get">
             <h2>Formularz kontaktowy</h2>
             <input type="text" name="imie" id="imie" placeholder="Imię">
             <input type="text" name="email" id="email" placeholder="Email">
@@ -118,8 +123,6 @@
     
     <footer id="footer">
         <p>Strona stworzona przez Seweryn Mik</p>
-        <button onclick="authenticate().then(loadClient)">authorize and load</button>
-<button onclick="execute()">execute</button>
 
     </footer>
     <script src="https://apis.google.com/js/api.js"></script>

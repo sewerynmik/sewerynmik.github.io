@@ -240,6 +240,39 @@ footer{
 }
 
 
+.api{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.api form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.text img{
+    height: 300px;
+    width: 200px;
+    padding: 10px;
+}
+
+.text #zdj1{
+    float: left;
+}
+
+.text #zdj2{
+    float: right;
+}
+
+
+
 
 @media screen and (max-width: 1050px) {
     .backImage img{
@@ -313,6 +346,10 @@ footer{
     }
 
     nav .navBar .navList ul:hover li ul{
+        display: none;
+    }
+
+    .text img{
         display: none;
     }
 }

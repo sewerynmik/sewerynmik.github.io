@@ -60,6 +60,9 @@ nav4.onclick = function () {
 }
 
 
+var first = true;
+
+
 function authenticate() {
     return gapi.auth2.getAuthInstance()
         .signIn({scope: "https://www.googleapis.com/auth/youtube.readonly"})
@@ -72,7 +75,6 @@ function authenticate() {
         .then(function() { console.log("GAPI client loaded for API"); },
               function(err) { console.error("Error loading GAPI client for API", err); });
   }
-  // Make sure the client is loaded and sign-in is complete before calling this method.
   function execute() {
     return gapi.client.youtube.channels.list({
       "part": [
@@ -83,7 +85,6 @@ function authenticate() {
       ]
     })
         .then(function(response) {
-                // Handle the results here (response.result has the parsed body).
                 console.log("Response", response);
               },
               function(err) { console.error("Execute error", err); });
@@ -91,3 +92,53 @@ function authenticate() {
   gapi.load("client:auth2", function() {
     gapi.auth2.init({client_id: "776044183582-96jn07vm5nnmip3gdq7780b7gv444sgr.apps.googleusercontent.com"});
   });
+
+  document.querySelector('.api form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    if (first == true) {
+        authenticate().then(loadClient).then(execute);
+        first = false;
+    }
+    var searchQuery = document.getElementById('search').value;
+    searchYouTube(searchQuery);
+});
+
+function searchYouTube(query) {
+    return gapi.client.youtube.search.list({
+        'part': 'snippet',
+        'maxResults': 5,
+        'q': query
+    })
+    .then(function(response) {
+        displayResults(response.result);
+    },
+    function(err) { console.error("Execute error", err); });
+}
+
+function displayResults(response) {
+    var videosContainer = document.getElementById('videosContainer');
+
+    videosContainer.innerHTML = '';
+
+    if (response.items.length == 0) {
+        videosContainer.innerHTML = '<p>Brak wyników.</p>';
+        return;
+    }
+
+    var firstVideo = response.items.find(item => item.id.kind === 'youtube#video');
+
+    if (!firstVideo) {
+        videosContainer.innerHTML = '<p>Brak wyników wideo.</p>';
+        return;
+    }
+
+    var iframe = document.createElement('iframe');
+    iframe.setAttribute('src', 'https://www.youtube.com/embed/' + firstVideo.id.videoId);
+    iframe.setAttribute('width', '560');
+    iframe.setAttribute('height', '315');
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+    iframe.setAttribute('allowfullscreen', true);
+
+    videosContainer.appendChild(iframe);
+}
