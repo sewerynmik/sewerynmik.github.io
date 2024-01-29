@@ -1,17 +1,3 @@
-/*
-navBar
-
-Ustawnia nav na stałe na górze strony
-zaokrągla rogi, i oblicza szerokość na podstawie szerokości ekranu i marginesów
-
-dla potoznych elementów ustawia marginesy i paddingi na 0px
-oraz centruje elementy w pionie i poziomie
-
-Przy najechaniu na element listy, zmienia kolor tła na czerwony
-Przy najechaniu na element listy króry ma podmenu, wyświetla podmenu
-
-Styleguide 1.1.0
-*/
 nav .navBar {
     position: fixed;
     padding: 10px;
@@ -81,15 +67,6 @@ nav .navBar h1{
     margin: 10px 0px 0px 0px;
     height: 100%;
 }
-/*
-Kolo
-
-Ustawia element kolo na stałe na górze strony
-element kolo jest kółkiem, które po najechaniu na nie wyświetla menu
-wykorzystuje to do ukrycia menu na małych ekranach
-
-Styleguide 1.1.1
-*/
 nav .kolo{
     border: 2px solid #470031;
     width: 30px;
@@ -110,13 +87,7 @@ hr{
     border: none;
 }
 
-/*
-Div
 
-Ustawia odpowiednie wysokości dla poszczególnych elementów
-
-Styleguide 1.2.1
-*/
 .wyszukiwarka{
     width: 100%;
     height: 100px;
@@ -129,17 +100,10 @@ Styleguide 1.2.1
 
 footer{
     width: 100%;
-    height: 100px;
+    height: 50px;
 }
 
-/*
-Body
 
-Ustawia wyświeletnie elementów w pionie
-oraz kolor tła
-
-Styleguide 1.2.2
-*/
 body{
     display: flex;
     flex-direction: column;
@@ -147,26 +111,12 @@ body{
     background-color: #FFF5E0;
 }
 
-/*
-BackImage
 
-Ustawia div z wyśrdokowym obrazkiem 
-
-Styleguide 1.3.1
-*/
 .backImage{
     display: flex;
     justify-content: center;
 }
 
-/*
-Form
-
-Ustawia wyświeletnie elementów w pionie, odpowiednie kolory,
-z odstępami między nimi, oraz wyskości dla poszczególnych elementów formularza
-
-Styleguide 1.4.1
-*/
 
 .formularz{
     display: flex;
@@ -210,25 +160,12 @@ Styleguide 1.4.1
     gap: 1px;
 }
 
-/*
-Placeholder
 
-Ustawia kolor tekstu w placeholderze na biały
-
-Styleguide 1.4.2
-*/
 ::placeholder{
     color: white;
 }
 
-/*
-Button
 
-Stylizuje przycisk i checkbox aby miały odpowiedni kolor,
-oraz cień, a przy najechaniu na niego zmienia kursór na rękę
-
-Styleguide 1.4.3
-*/
 .formularz form section input[type="checkbox"]{
     width: 18px;
     height: 18px;
@@ -264,13 +201,7 @@ Styleguide 1.4.3
     box-shadow: 0px 0px 5px 0px #470031;
 }
 
-/*
-Submit
 
-Ustawia animacje dla przycisku, która powoduje, że przy najechaniu na niego zwiększa się i kurczy
-
-Styleguide 1.4.4
-*/
 .formularz form input[type="submit"]:hover{
     background-color: #470031;
     cursor: pointer;
@@ -283,15 +214,7 @@ footer{
     justify-content: center;
 }
 
-/*
-Karuzela
 
-Ustawia wyświetlanie elementów w pozionie, 
-sprawia że elementy są nie powodują powstania scrolla nawed gdy ich ilość jest większa niż wysokość ekranu
-przypisuje animacje do kazuzeli oraz stopuje ją przy najechaniu na nią
-
-Styleguide 1.5.1
-*/
 .karuzela .slaid img{
     height: 200px;
     margin: 0px 10px;
@@ -312,13 +235,7 @@ Styleguide 1.5.1
     white-space: nowrap;
 }
 
-/*
-Animacja
 
-Animacja dla karuzeli która przesuwa elementy w lewo
-
-Styleguide 1.5.2
-*/
 @keyframes slajd {
     0%{
         transform: translateX(0p);
@@ -329,13 +246,7 @@ Styleguide 1.5.2
     }
 }
 
-/*
-ApiForm
 
-Ustawia wyświetlanie elementów w pionie z odstępami między nimi
-
-Styleguide 1.6.1
-*/
 .api{
     display: flex;
     justify-content: center;
@@ -353,13 +264,7 @@ Styleguide 1.6.1
     gap: 10px;
 }
 
-/*
-Text
 
-Ustawia wielkość zdjęć oraz ich położenie względem tekstu
-
-Styleguide 1.7.1
-*/
 .text img{
     height: 300px;
     width: 200px;
@@ -374,15 +279,6 @@ Styleguide 1.7.1
     float: right;
 }
 
-
-
-/*
-Media queries1
-
-Zmniejsza wielkość zdjęć gdyby szerokość ekranu była mniejsza niż szerokość zdjęcia
-
-Styleguide 1.8.1
-*/
 @media screen and (max-width: 1050px) {
     .backImage img{
         height: 512px;
@@ -394,14 +290,6 @@ Styleguide 1.8.1
 }
 
 
-/*
-Media queries2
-
-Zmienia sposób wyświetlania navBara na grid, gdy szerokość ekranu jest mniejsza niż 710px
-pojawia się kolo które po najechaniu na nie wyświetla menu
-
-Styleguide 1.8.2
-*/
 @media screen and (max-width: 710px) {
     nav .navBar{
         display: none;
@@ -438,15 +326,6 @@ Styleguide 1.8.2
     } 
 }
 
-/*
-Media queries3
-
-Zmiejsza menu gdy szerokość ekranu jest mniejsza niż 540px
-podmenu sie nie wyświetla
-wieksze zdjęcia zmiejsza się dwukrotnie
-
-Styleguide 1.8.3
-*/
 @media screen and (max-width: 540px) {
     .backImage img{
         height: 256px;
@@ -479,13 +358,7 @@ Styleguide 1.8.3
     }
 }
 
-/*
-Animacja2
 
-Amimacja dla przycisku nieco go powiększająca i wracająca do pierwotnej wielkości
-
-Styleguide 1.4.5
-*/
 @keyframes hop {
     0% {
         transform: scale(1);
@@ -498,4 +371,82 @@ Styleguide 1.4.5
     100% {
         transform: scale(1);
     }
+}
+
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 101;
+    opacity: 0;
+    pointer-events: none;
+    animation: hidePopup 5s linear forwards;
+}
+
+.popup-content {
+    text-align: center;
+}
+
+@keyframes hidePopup {
+    0% {
+        opacity: 1;
+    }
+    99% {
+        opacity: 0;
+        pointer-events: none;
+    }
+    100% {
+        opacity: 0;
+        pointer-events: none;
+        display: none;
+    }
+}
+
+.gradient-background {
+    background: linear-gradient(300deg, #faa4a4, #FFF5E0, #faa4a4);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+}
+  
+
+
+@keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 25%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
+
+
+.quiz-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+h1 {
+    color: #333;
+}
+
+
+button {
+    background-color: #C70039;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #470031;
 }

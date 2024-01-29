@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            Uwaga!<br>
+            Strona nie jest orginalną stroną YouTube.
+        </div>
+    </div>
     
     <nav>
         <div class="kolo">
@@ -105,7 +111,7 @@
     </div>
 
     <hr>
-
+ 
     <div class="formularz">
         <form action="" method="get">
             <h2>Formularz kontaktowy</h2>
@@ -118,10 +124,24 @@
         </form>
     </div>
 
+    <hr>
+
+    <div class="quiz-container">
+        <h1>Quiz o YouTube</h1>
+        <p id="question">Pytanie</p>
+        <div id="options">
+            <button id="optionA"></button>
+            <button id="optionB"></button>
+            <button id="optionC"></button>
+        </div>
+        <p id="result"></p>
+        <button id="nextButton">Następne pytanie</button>
+    </div>
+
 
     <hr>
     
-    <footer id="footer">
+    <footer id="footer" class="gradient-background">
         <p>Strona stworzona przez Seweryn Mik</p>
 
     </footer>
